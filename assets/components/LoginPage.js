@@ -59,7 +59,7 @@ export default ({ navigation }) => (
 	<Button
 		title = "SignUp"
 		style = {styles.btnLogin}
-		onPress = () => {navigation.navigate('SignUp')}
+		onPress = () => navigation.navigate('SignUp')
 	/>
 
 

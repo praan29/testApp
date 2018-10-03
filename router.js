@@ -7,7 +7,7 @@ import Micon from 'react-native-vector-icons/MaterialIcons';
 import ficon from 'react-native-vector-icons/FontAwesome';
 
 import Home from './assets/components/Home';
-import SignUpScreen from '../components/SignUp';
+import SignUpScreen from './assets/components/SignUp';
 
 import DashBoard from './assets/components/DashBoard';
 
