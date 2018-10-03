@@ -56,12 +56,22 @@ export default ({ navigation }) => (
 		/>
 	</View>
 
-	<Button
-		title = "SignUp"
-		style = {styles.btnLogin}
-		onPress = () => navigation.navigate('SignUp')
-	/>
+	<View style={[styles.loginButtonWraper,styles.buttonLogin]}>
+		<Button
+			title = "Login"
+			color="#27ae60"
+			onPress={() =>  Alert.alert('Sign Button Clicked')}
+		/>
+	</View>
 
+	<View style={[styles.signUpButtonWraper,styles.buttonSignIn]}>
+		<Button
+			height = "40"
+			title = "SignUp"
+			color = "#234876"
+			onPress = {() => navigation.navigate('SignUp')}
+		/>
+	</View>
 
 </View>
 
@@ -110,20 +120,17 @@ marginStart : 24,
 borderBottomColor : '#ece058',
 },
 
-btnLogin : {
-marginTop : 15,
-marginBottom : 20,
-paddingVertical : 10,
-height : 10,
-color : 'red',
-// backgroundColor : '#27ae60',
+buttonLogin : {
+	height : null,
+	marginTop : 15,
+	// marginBottom : 20,
+	paddingVertical : 10,
 },
 
-btnSignIn : {
-marginTop : 7,
-marginBottom : 20,
-paddingVertical : 10,
-backgroundColor : '#234876',
+buttonSignIn : {
+	height : null,
+	marginTop : 15,
+	paddingVertical : 10,
 },
 
 btnIcons : {
@@ -134,22 +141,23 @@ paddingVertical : 8,
 position: 'absolute',
 },
 
-buttonContainerLogin: {
-width: null,
-height: 40,
-borderRadius : 2,
-borderColor:'#2ecc71',
-backgroundColor:'#2ecc71',
-marginVertical: 8,
+loginButtonWraper :{
+	marginTop : 15,
 },
-
-buttonContainerSignIn: {
-width: null,
-height: 40,
-borderRadius : 4,
-borderColor:'#34495e',
-backgroundColor:'#34495e',
-marginVertical: 8,
+loginButton: {
+	width:20,
+	paddingVertical : 100,
+},
+signUpButtonWraper:{
+	marginTop : 22,
+},
+signInButton: {
+	width: null,
+	height: 400,
+	borderRadius : 4,
+	borderColor:'#34495e',
+	backgroundColor:'#34495e',
+	marginVertical: 8,
 },
 
 inputIcons :{
@@ -185,7 +193,7 @@ paddingHorizontal : 20,
 //<FontAwesome name='unlock' size={20} style = {styles.btnIcons} />
 
 
-// <TouchableOpacity style = {styles.btnSignIn}>
+// <TouchableOpacity style = {styles.buttonSignIn}>
 // 						<FontAwesome name='sign-in' style = {styles.btnIcons} size ={20}/>
 // 							<Text style = {styles.btnCaption}  title = "login"> 
 // 								SIGN IN
