@@ -76,7 +76,7 @@ export default ({ navigation }) => (
 </View>
 
 <TouchableOpacity>
-	<Text style = {styles.btnForgetPwd}> Forget Password ? </Text>
+	<Text style = {styles.btnForgetPwd}> Forgot Password ? </Text>
 </TouchableOpacity>
 
 </KeyboardAvoidingView>
@@ -155,7 +155,7 @@ signInButton: {
 	width: null,
 	height: 400,
 	borderRadius : 4,
-	borderColor:'#34495e',
+	borderColor:'#34495e',	
 	backgroundColor:'#34495e',
 	marginVertical: 8,
 },
