@@ -2,7 +2,7 @@
 import App from './router';
 
 import React,{Component} from 'react';
-import {rootNavigator} from './router';
+import {RootStackNavigator} from './router';
 
 
 export default class Controller extends Component{
@@ -20,7 +20,7 @@ export default class Controller extends Component{
 
   render(){
     const { userSession } = this.state;
-    const Apptemplates = rootNavigator(userSession);
+    const Apptemplates = RootStackNavigator(userSession);
     return <Apptemplates/>;
   }
 }

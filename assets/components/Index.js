@@ -7,7 +7,7 @@ import LoginScreen from '../components/LoginPage';
 
 
 const orgLogo = require('../img/logo.png');
-const wallpaper = require('../img/cons-7.jpeg');
+const wallpaper = require('../img/wallpaper-8.jpg');
 
 
 export default class Home extends Component{
