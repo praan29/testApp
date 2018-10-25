@@ -1,5 +1,13 @@
 import React,{Component} from 'react';
-import {View,Text,StyleSheet,Image,ScrollView,} from 'react-native';
+import { 
+         View,
+         Text,
+         StyleSheet,
+         Image,
+         ScrollView,
+         TouchableOpacity,
+       } from 'react-native';
+
 
 export default class DashBoard extends Component{
 
@@ -11,6 +19,16 @@ export default class DashBoard extends Component{
 // 		backgroundColor: '#cccccc', // header background color
 // 	},
 // };
+
+  revenueItem = () =>{
+    this.props.navigation.navigate('ChartView');
+    console.log("Revenue");
+  }
+
+  profitItem = () =>{
+    // this.props.navigation.navigate('SignUp');
+    console.log("Profit");
+  }
 
 	render(){
 		return(
@@ -34,53 +52,97 @@ export default class DashBoard extends Component{
         </View>
 
         <View style={styles.revenueSection}>
+            <TouchableOpacity onPress={this.revenueItem} style={[styles.revenueItem,styles.revenueSeparator]}>
+              <View >
+                  <Text style={styles.barTop}>Revenue</Text>
+                  <Text style={styles.barBottom}>10,28,456</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={this.profitItem} style={styles.revenueItem}>
+              <View >
+                  <Text style={styles.barTop}>Profit</Text>
+                  <Text style={styles.barBottom}>10,28,456</Text>
+              </View>
+            </TouchableOpacity>
+        </View>
+
+         <View style={styles.revenueSection}>
             <View style={[styles.revenueItem,styles.revenueSeparator]}>
-                <Text style={styles.barTop}>Revenue</Text>
-                <Text style={styles.barBottom}>10,28,456</Text>
+            
             </View>
             <View style={styles.revenueItem}>
-                <Text style={styles.barTop}>Profit</Text>
-                <Text style={styles.barBottom}>10,28,456</Text>
+
             </View>
-        </View>
+         </View>
 
          <View style={styles.revenueSection}>
             <View style={[styles.revenueItem,styles.revenueSeparator]}>
             
             </View>
-        </View>
+            <View style={styles.revenueItem}>
+
+            </View>
+         </View>
 
          <View style={styles.revenueSection}>
             <View style={[styles.revenueItem,styles.revenueSeparator]}>
             
             </View>
-        </View>
+            <View style={styles.revenueItem}>
+
+            </View>
+         </View>
 
          <View style={styles.revenueSection}>
             <View style={[styles.revenueItem,styles.revenueSeparator]}>
             
             </View>
-        </View>
+            <View style={styles.revenueItem}>
+
+            </View>
+         </View>
+
          <View style={styles.revenueSection}>
             <View style={[styles.revenueItem,styles.revenueSeparator]}>
             
             </View>
-        </View>
+            <View style={styles.revenueItem}>
+
+            </View>
+         </View>
+
          <View style={styles.revenueSection}>
             <View style={[styles.revenueItem,styles.revenueSeparator]}>
             
             </View>
-        </View>
+            <View style={styles.revenueItem}>
+
+            </View>
+         </View>
+
          <View style={styles.revenueSection}>
             <View style={[styles.revenueItem,styles.revenueSeparator]}>
             
             </View>
-        </View>
+            <View style={styles.revenueItem}>
+
+            </View>
+         </View>
+
          <View style={styles.revenueSection}>
             <View style={[styles.revenueItem,styles.revenueSeparator]}>
             
             </View>
-        </View>
+            <View style={styles.revenueItem}>
+
+            </View>
+         </View>
+
+          
+
+
+         
 
 
       </ScrollView>
@@ -159,7 +221,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#D81B60',
     flexDirection:'row',
     margin:3,
-    padding:30,
+    padding:10,
   },
   revenueItem:{
     flex:1,
@@ -168,6 +230,7 @@ const styles = StyleSheet.create({
   },
   revenueSeparator:{
     borderRightWidth:2,
+    borderRightHeight:'auto',
     borderRightColor:'#ffff',
   },
   itemsWrapper:{

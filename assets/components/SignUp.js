@@ -59,11 +59,11 @@ export default class SignUp extends React.Component{
 onPress = data => this.setState({ data });
 
 onSignupPress = () =>{
-	this.props.navigation.navigate('HomePage0')
+	this.props.navigation.navigate('HomePage');
 }
 
 onBackToLoginPress= () => {
-	this.props.navigation.navigate('HomePage0')
+	this.props.navigation.navigate('HomePage');
 }
 
 render(){

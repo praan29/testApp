@@ -5,6 +5,7 @@ View,
 StyleSheet,
 }from 'react-native';
 
+
 export default class AddProject extends React.Component{
 render(){
 	return(

@@ -6,18 +6,16 @@ import {
 	StyleSheet,
 } from 'react-native';
 
-const Drawerbutton = require('../icons/menu2.png');
+import { Ionicons } from '@expo/vector-icons';
+
+const Drawerbutton = require('../icons/headerBackButton3.png');
 
 const DrawerIcon = ({navigation}) => (
 	<View style = {styles.container}>
 		<TouchableOpacity
-			onPress ={()=>navigation.openDrawer()}
+			onPress ={()=>navigation.navigate('HomePage')}
 		>
-			<Image
-				source = { Drawerbutton }
-				style = { styles.icon }
-			>
-			</Image>
+			<Ionicons name = 'ios-arrow-back' size = {26} color = 'red' style={styles.icon} />
 		</TouchableOpacity>
 	</View>
 );
@@ -26,11 +24,12 @@ const DrawerIcon = ({navigation}) => (
 const styles = StyleSheet.create({
 
 	container : {
-		marginLeft : 2,
+		// marginLeft : 2,
 	},
 	icon :{
-		width : 54,
-		height :54,
+		height :40,
+		marginTop : 15,
+		marginLeft:20,
 	}
 });
 

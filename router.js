@@ -18,8 +18,6 @@ import { View,
 			ScrollView,
 	 } from 'react-native';
 
-import Micon from 'react-native-vector-icons/MaterialIcons';
-import ficon from 'react-native-vector-icons/FontAwesome';
 
 import IndexView from './assets/components/Index';
 import IndexPage from './assets/components/IndexPage';
@@ -35,9 +33,11 @@ import Switch from './assets/components/tabs/header/Switch';
 import AddProject from './assets/components/tabs/header/AddProject';
 import UpdateProject from './assets/components/tabs/header/UpdateProject';
 
+
 import HomeScreen from './assets/components/HomeScreen';
 import Settings from './assets/components/Settings';
 import DrawerIcon from './assets/components/DrawerIcon';
+import RevenueChart from './assets/components/RevenueChart';
 
 const ProfileIcon = require('./assets/icons/profileIcon1.png');
 
@@ -95,9 +95,10 @@ export const HomeTopTabNav = createMaterialTopTabNavigator({
 		navigationOptions:{
 			tabBarLabel : 'Switch',
 		}
-	}
+	},
+	
 },{
-	initialRouteName : 'AddProject',
+	initialRouteName : 'DashBoard',
 	order : ['AddProject','UpdateProject','DashBoard','Settings','Switch'],
 	shifiting : true,
 	navigationOptions : ({ navigation }) =>({
@@ -113,7 +114,7 @@ export const HomeTopTabNav = createMaterialTopTabNavigator({
 	        } else if (routeName === 'Settings') {
 	            iconCaption = `ios-cog${focused ? '' : '-outline'}`;
 	        }else if (routeName === 'Switch') {
-	            iconCaption = `ios-repeat${focused ? '' : '-outline'}`;
+	             iconCaption = `ios-repeat${focused ? '' : '-outline'}`;
 	        }
 	        return <Ionicons name = {iconCaption} size = {26} color = {tintColor} />;
 		}
@@ -137,7 +138,7 @@ export const HomeTopTabNav = createMaterialTopTabNavigator({
 
 
 export const HomeBottomTabNav = createBottomTabNavigator({
-	HomePage0:{
+	HomePage:{
 		screen :  HomeTopTabNav,
 		// navigation options for individual tab
 		navigationOptions:{
@@ -161,8 +162,8 @@ export const HomeBottomTabNav = createBottomTabNavigator({
 },
 {
 	// router config
-	initialRouteName : 'HomePage0',
-	order :['HomePage0','Settings','SignUp'],
+	initialRouteName : 'HomePage',
+	order :['HomePage','Settings','SignUp'],
 	shifiting:true,
 	
 	// navigation options for complete
@@ -170,7 +171,7 @@ export const HomeBottomTabNav = createBottomTabNavigator({
 		tabBarIcon: ({ focused, tintColor }) => {
         	let iconName;
         	const { routeName } = navigation.state;
-	        if (routeName === 'HomePage0') {
+	        if (routeName === 'HomePage') {
 	            iconName = `ios-home${focused ? '' : '-outline'}`;
 	        } else if (routeName === 'Settings') {
 	          iconName = `logo-usd`;
@@ -229,6 +230,18 @@ export const IndexScreen = createStackNavigator({
 	}
 });
 
+export const ChartScreen = createStackNavigator({
+	DChart :{
+		screen : RevenueChart,
+		navigationOptions: ( { navigation } )=> ({
+			title : 'Total Revenue Chart',
+
+			headerStyle: { backgroundColor: '#2196f3'},
+			headerTintColor: '#fff',
+	 		headerLeft : <DrawerIcon navigation = { navigation }/>,
+ 		}),
+	}
+});
 
 export const RootStackNavigator = (userSession = false)=> {
 	return createStackNavigator(
@@ -259,6 +272,9 @@ export const RootStackNavigator = (userSession = false)=> {
 			        header : null
 			    }
 			},
+			ChartView:{
+				screen:ChartScreen,
+			}
 		},
 		{
 			headerMode: 'none',
