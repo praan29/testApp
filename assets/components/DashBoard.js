@@ -21,20 +21,21 @@ export default class DashBoard extends Component{
 // 	},
 // };
 
-  revenueItem = () =>{
-    this.props.navigation.navigate('ChartView');
+  revenueItemOnPress = () =>{
+    this.props.navigation.navigate('RevenueChartView');
     console.log("Revenue");
   }
 
-  profitItem = () =>{
-    // this.props.navigation.navigate('SignUp');
+  profitItemOnPress = () =>{
+    this.props.navigation.navigate('ProfitChartView');
     console.log("Profit");
   }
 
 	render(){
 		return(
       <ScrollView style={styles.scrollContainer}>
-				<View style = {styles.bar}>
+				
+        <View style = {styles.bar}>
             <View style={[styles.barItemLeft,styles.barseparator]}>
                 <Text style={styles.barValueDescription}>Expences</Text>
                 <Text style={styles.barValue}>10,28,456</Text>
@@ -59,8 +60,8 @@ export default class DashBoard extends Component{
         </View>
 
         <View style={styles.revenueSection}>
-            <TouchableOpacity onPress={this.revenueItem} style={[styles.revenueItem,styles.revenueSeparator]}>
-              <View >
+            <TouchableOpacity onPress={this.revenueItemOnPress} style={[styles.revenueItems,styles.revenueSeparator]}>
+              <View style={styles.revenueItemsLeft}>
                   <Text style={styles.barValueDescription}>Revenue</Text>
                   <Text style={styles.barValue}>10,28,456</Text>
                   <View style={styles.transIcons}>
@@ -69,8 +70,8 @@ export default class DashBoard extends Component{
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={this.profitItem} style={styles.revenueItem}>
-              <View >
+            <TouchableOpacity onPress={this.profitItemOnPress} style={styles.revenueItems}>
+              <View style={styles.revenueItemsRight}>
                   <Text style={styles.barValueDescription}>Profit</Text>
                   <Text style={styles.barValue}>10,28,456</Text>
                   <View style={styles.transIcons}>
@@ -80,77 +81,140 @@ export default class DashBoard extends Component{
             </TouchableOpacity>
         </View>
 
-         <View style={styles.revenueSection}>
-            <View style={[styles.revenueItem,styles.revenueSeparator]}>
-            
-            </View>
-            <View style={styles.revenueItem}>
+        <View style={styles.revenueSection}>
+            <TouchableOpacity onPress={this.revenueItemOnPress} style={[styles.revenueItems,styles.revenueSeparator]}>
+              <View style={styles.revenueItemsLeft}>
+                  <Text style={styles.barValueDescription}>Revenue</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-down" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
 
-            </View>
-         </View>
+            <TouchableOpacity onPress={this.profitItemOnPress} style={styles.revenueItems}>
+              <View style={styles.revenueItemsRight}>
+                  <Text style={styles.barValueDescription}>Profit</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-up" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
+        </View>
 
-         <View style={styles.revenueSection}>
-            <View style={[styles.revenueItem,styles.revenueSeparator]}>
-            
-            </View>
-            <View style={styles.revenueItem}>
+        <View style={styles.revenueSection}>
+            <TouchableOpacity onPress={this.revenueItemOnPress} style={[styles.revenueItems,styles.revenueSeparator]}>
+              <View style={styles.revenueItemsLeft}>
+                  <Text style={styles.barValueDescription}>Revenue</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-down" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
 
-            </View>
-         </View>
+            <TouchableOpacity onPress={this.profitItemOnPress} style={styles.revenueItems}>
+              <View style={styles.revenueItemsRight}>
+                  <Text style={styles.barValueDescription}>Profit</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-up" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
+        </View>
 
-         <View style={styles.revenueSection}>
-            <View style={[styles.revenueItem,styles.revenueSeparator]}>
-            
-            </View>
-            <View style={styles.revenueItem}>
+        <View style={styles.revenueSection}>
+            <TouchableOpacity onPress={this.revenueItemOnPress} style={[styles.revenueItems,styles.revenueSeparator]}>
+              <View style={styles.revenueItemsLeft}>
+                  <Text style={styles.barValueDescription}>Revenue</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-down" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
 
-            </View>
-         </View>
+            <TouchableOpacity onPress={this.profitItemOnPress} style={styles.revenueItems}>
+              <View style={styles.revenueItemsRight}>
+                  <Text style={styles.barValueDescription}>Profit</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-up" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
+        </View>
 
-         <View style={styles.revenueSection}>
-            <View style={[styles.revenueItem,styles.revenueSeparator]}>
-            
-            </View>
-            <View style={styles.revenueItem}>
+        <View style={styles.revenueSection}>
+            <TouchableOpacity onPress={this.revenueItemOnPress} style={[styles.revenueItems,styles.revenueSeparator]}>
+              <View style={styles.revenueItemsLeft}>
+                  <Text style={styles.barValueDescription}>Revenue</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-down" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
 
-            </View>
-         </View>
+            <TouchableOpacity onPress={this.profitItemOnPress} style={styles.revenueItems}>
+              <View style={styles.revenueItemsRight}>
+                  <Text style={styles.barValueDescription}>Profit</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-up" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
+        </View>
 
-         <View style={styles.revenueSection}>
-            <View style={[styles.revenueItem,styles.revenueSeparator]}>
-            
-            </View>
-            <View style={styles.revenueItem}>
+        <View style={styles.revenueSection}>
+            <TouchableOpacity onPress={this.revenueItemOnPress} style={[styles.revenueItems,styles.revenueSeparator]}>
+              <View style={styles.revenueItemsLeft}>
+                  <Text style={styles.barValueDescription}>Revenue</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-down" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
 
-            </View>
-         </View>
+            <TouchableOpacity onPress={this.profitItemOnPress} style={styles.revenueItems}>
+              <View style={styles.revenueItemsRight}>
+                  <Text style={styles.barValueDescription}>Profit</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-up" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
+        </View>
 
-         <View style={styles.revenueSection}>
-            <View style={[styles.revenueItem,styles.revenueSeparator]}>
-            
-            </View>
-            <View style={styles.revenueItem}>
+        <View style={styles.revenueSection}>
+            <TouchableOpacity onPress={this.revenueItemOnPress} style={[styles.revenueItems,styles.revenueSeparator]}>
+              <View style={styles.revenueItemsLeft}>
+                  <Text style={styles.barValueDescription}>Revenue</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-down" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
 
-            </View>
-         </View>
+            <TouchableOpacity onPress={this.profitItemOnPress} style={styles.revenueItems}>
+              <View style={styles.revenueItemsRight}>
+                  <Text style={styles.barValueDescription}>Profit</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-up" size = {30} color = "#4d4d4d" />
+                </View>
+              </View>
+            </TouchableOpacity>
+        </View>
 
-         <View style={styles.revenueSection}>
-            <View style={[styles.revenueItem,styles.revenueSeparator]}>
-            
-            </View>
-            <View style={styles.revenueItem}>
 
-            </View>
-         </View>
-
-         <View style={styles.revenueSection}>
-            <View style={[styles.revenueItem,styles.revenueSeparator]}>
-            
-            </View>
-            <View style={styles.revenueItem}>
-
-            </View>
-         </View>
+         
       </ScrollView>
             
 		);
@@ -168,31 +232,36 @@ const styles = StyleSheet.create({
     right:12,
   },
   bar:{
-    borderTopColor:'#BDBDBD',
-    borderTopWidth:1,
+    // borderTopColor:'#BDBDBD',
+    // borderTopWidth:1,
     flexDirection:'row',
     margin:3,
+
   },
   barItemLeft:{
     flex:1,
     padding:18,
     alignItem:'center',
-    backgroundColor:'#F5F5F5',
+    borderRadius : 20,
+    marginRight : 10,
+    backgroundColor:'#64B5F6',
   },
   barItemRight:{
     flex:1,
     padding:18,
     alignItem:'center',
-    backgroundColor:'#F5F5F5',
+    borderRadius : 20,
+    backgroundColor:'#64B5F6',
   },
   barseparator:{
-    borderRightWidth:2,
-    borderRightColor:'#BDBDBD',
+    // borderRightWidth:5,
+    // borderRightColor:'#FFFFFF'
+    // borderRightColor:'#BDBDBD',
   },
   barValueDescription:{
-    color:'#01579B',
-    fontSize:16,
-    fontWeight:'300',
+    color:'#4d4d4d',
+    fontSize:18,
+    fontWeight:'500',
     fontFamily: 'Roboto',
     letterSpacing: 1.4,
   },
@@ -204,13 +273,16 @@ const styles = StyleSheet.create({
     letterSpacing: 1.2,
   },
   statusSection:{
-    flexWrap:'wrap',
-    borderTopColor:'#BDBDBD',
-    borderTopWidth:1,
-    backgroundColor:'#F5F5F5',
-    flexDirection:'column',
     margin:3,
     padding:30,
+    borderRadius:20,
+    flexWrap:'wrap',
+    backgroundColor:'#64B5F6',
+    flexDirection:'column',
+    // borderTopColor:'#BDBDBD',
+    // borderTopWidth:1,
+    
+
   },
   statusDescription:{
     fontSize:16,
@@ -234,22 +306,38 @@ const styles = StyleSheet.create({
   },
   revenueSection:{
     flexWrap:'wrap',
-    borderTopColor:'#BDBDBD',
-    borderTopWidth:1,
-    backgroundColor:'#F5F5F5',
+    // borderTopColor:'#BDBDBD',
+    // borderTopWidth:1,
+    // backgroundColor:'#F5F5F5',
     flexDirection:'row',
     margin:3,
-    padding:10,
+    // padding:10,
   },
-  revenueItem:{
+  revenueItems:{
     flex:1,
-    padding:18,
+    // padding:18,
     alignItem:'center',
   },
+  revenueItemsLeft:{
+    flex:1,
+    padding:25,
+    alignItem:'center',
+    borderRadius : 20,
+    marginRight : 10,
+    backgroundColor:'#64B5F6',
+  },
+  revenueItemsRight:{
+    flex:1,
+    padding:25,
+    alignItem:'center',
+    borderRadius : 20,
+    // marginRight : 10,
+    backgroundColor:'#64B5F6',
+  },
   revenueSeparator:{
-    borderRightWidth:1,
-    borderRightHeight:'auto',
-    borderRightColor:'#BDBDBD',
+    // borderRightWidth:1,
+    // borderRightHeight:'auto',
+    // borderRightColor:'#BDBDBD',
   },
   itemsWrapper:{
      flexGrow : 1,

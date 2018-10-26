@@ -38,6 +38,7 @@ import HomeScreen from './assets/components/HomeScreen';
 import Settings from './assets/components/Settings';
 import DrawerIcon from './assets/components/DrawerIcon';
 import RevenueChart from './assets/components/RevenueChart';
+import ProfitChart from './assets/components/ProfitChart';
 
 const ProfileIcon = require('./assets/icons/profileIcon1.png');
 
@@ -126,7 +127,7 @@ export const HomeTopTabNav = createMaterialTopTabNavigator({
 		inactiveTintColor : '#EDE7F6',
 		style :{
 			marginTop:20,
-		   backgroundColor: '#0D47A1' // TabBar background
+		   backgroundColor: '#2980b9' // TabBar background
         },
 		indicatorStyle:{
 			height : 0,
@@ -186,7 +187,7 @@ export const HomeBottomTabNav = createBottomTabNavigator({
 		activeTintColor : '#ffffff',
 		inactiveTintColor : '#EDE7F6',
 		style: {
-            backgroundColor: '#0D47A1' // TabBar background
+            backgroundColor: '#2980b9' // TabBar background
         }
 	},
 });
@@ -230,12 +231,28 @@ export const IndexScreen = createStackNavigator({
 	}
 });
 
-export const ChartScreen = createStackNavigator({
+export const RevenueChartScreen = createStackNavigator({
 	DChart :{
 		screen : RevenueChart,
 		navigationOptions: ( { navigation } )=> ({
 			title : 'Revenue Chart',
-			headerStyle: { backgroundColor: '#0D47A1',height : 80,}, // Tab Header
+			headerStyle: { backgroundColor: '#2980b9',height : 80,}, // Tab Header
+			headerTintColor: '#fff',
+			headerTitleStyle:{
+				fontSize:20,fontFamily:'Roboto',color:'#fff',fontWeigth:'100',letterSpacing:1.8,
+			},
+			// headerLeft: <HeaderBackButton onPress={() => this.navigation.goBack(null)} />,
+	 		headerLeft : <DrawerIcon navigation = { navigation } />,
+ 		}),
+	}
+});
+
+export const ProfitChartScreen = createStackNavigator({
+	DChart :{
+		screen : ProfitChart,
+		navigationOptions: ( { navigation } )=> ({
+			title : 'Profit Chart',
+			headerStyle: { backgroundColor: '#2980b9',height : 80,}, // Tab Header
 			headerTintColor: '#fff',
 			headerTitleStyle:{
 				fontSize:20,fontFamily:'Roboto',color:'#fff',fontWeigth:'100',letterSpacing:1.8,
@@ -275,8 +292,11 @@ export const RootStackNavigator = (userSession = false)=> {
 			        header : null
 			    }
 			},
-			ChartView:{
-				screen:ChartScreen,
+			RevenueChartView:{
+				screen:RevenueChartScreen,
+			},
+			ProfitChartView:{
+				screen:ProfitChartScreen,
 			}
 		},
 		{

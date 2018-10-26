@@ -8,7 +8,7 @@ import {
 import PureChart from 'react-native-pure-chart';
 import UnderConstruction from '../components/BackGroundUnderConstruction';
 
-export default class RevenueChart extends React.Component{
+export default class ProfitChart extends React.Component{
 
 // static navigationOptions = {
 // 	title : 'DashBoard',
@@ -53,7 +53,7 @@ render(){
 		return(
 			<View style = {styles.container}>
 				<View style={styles.cTitle}>
-					<Text style={styles.title}>Total Revenue By Chart</Text> 
+					<Text style={styles.title}>Total Profit By Chart</Text> 
 					<Text style={styles.watermarktext}>(click on slices)</Text>
 				</View>
 
