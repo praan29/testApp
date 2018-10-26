@@ -126,7 +126,7 @@ export const HomeTopTabNav = createMaterialTopTabNavigator({
 		inactiveTintColor : '#EDE7F6',
 		style :{
 			marginTop:20,
-		   backgroundColor: '#00838F' // TabBar background
+		   backgroundColor: '#0D47A1' // TabBar background
         },
 		indicatorStyle:{
 			height : 0,
@@ -178,15 +178,15 @@ export const HomeBottomTabNav = createBottomTabNavigator({
 	        }else if(routeName === 'SignUp' ){
 	        	iconName = `ios-add-circle${focused ? '' : '-outline'}`;
 	        }
-        	return <Ionicons name = {iconName} size = {26} color = {tintColor} />;
+        	return <Ionicons name = {iconName} size = {20} color = {tintColor} />;
       	},
     }),
 	tabBarOptions:{
 		showLabel: false,
 		activeTintColor : '#ffffff',
-		inactiveTintColor : 'EDE7F6',
+		inactiveTintColor : '#EDE7F6',
 		style: {
-            backgroundColor: '#00838F' // TabBar background
+            backgroundColor: '#0D47A1' // TabBar background
         }
 	},
 });

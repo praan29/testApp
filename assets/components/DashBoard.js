@@ -8,6 +8,7 @@ import {
          TouchableOpacity,
        } from 'react-native';
 
+import { Ionicons } from '@expo/vector-icons';
 
 export default class DashBoard extends Component{
 
@@ -34,14 +35,20 @@ export default class DashBoard extends Component{
 		return(
       <ScrollView style={styles.scrollContainer}>
 				<View style = {styles.bar}>
-            <View style={[styles.barItem,styles.barseparator]}>
-                <Text style={styles.barTop}>Expences</Text>
-                <Text style={styles.barBottom}>10,28,456</Text>
+            <View style={[styles.barItemLeft,styles.barseparator]}>
+                <Text style={styles.barValueDescription}>Expences</Text>
+                <Text style={styles.barValue}>10,28,456</Text>
+                <View style={styles.transIcons}>
+                    <Ionicons name = "ios-log-out" size = {30} color = "#4d4d4d" />
+                </View>
             </View>
 
-            <View style={styles.barItem}>
-                <Text style={styles.barTop}>PendingBills</Text>
-                <Text style={styles.barBottom}>1,24,123</Text>
+            <View style={styles.barItemRight}>
+                <Text style={styles.barValueDescription}>PendingBills</Text>
+                <Text style={styles.barValue}>1,24,123</Text>
+                <View style={styles.transIcons}>
+                    <Ionicons name = "ios-pause" size = {30} color = "#4d4d4d" />
+                </View>
             </View>
 
         </View>
@@ -54,15 +61,21 @@ export default class DashBoard extends Component{
         <View style={styles.revenueSection}>
             <TouchableOpacity onPress={this.revenueItem} style={[styles.revenueItem,styles.revenueSeparator]}>
               <View >
-                  <Text style={styles.barTop}>Revenue</Text>
-                  <Text style={styles.barBottom}>10,28,456</Text>
+                  <Text style={styles.barValueDescription}>Revenue</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-down" size = {30} color = "#4d4d4d" />
+                </View>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={this.profitItem} style={styles.revenueItem}>
               <View >
-                  <Text style={styles.barTop}>Profit</Text>
-                  <Text style={styles.barBottom}>10,28,456</Text>
+                  <Text style={styles.barValueDescription}>Profit</Text>
+                  <Text style={styles.barValue}>10,28,456</Text>
+                  <View style={styles.transIcons}>
+                    <Ionicons name = "ios-trending-up" size = {30} color = "#4d4d4d" />
+                </View>
               </View>
             </TouchableOpacity>
         </View>
@@ -138,13 +151,6 @@ export default class DashBoard extends Component{
 
             </View>
          </View>
-
-          
-
-
-         
-
-
       </ScrollView>
             
 		);
@@ -155,30 +161,42 @@ const styles = StyleSheet.create({
   scrollContainer:{
     margin:5,
   },
+  transIcons:{
+    position : 'absolute',
+    top:20,
+    bottom:10,
+    right:12,
+  },
   bar:{
-    borderTopColor:'#fff',
-    borderTopWidth:4,
-    backgroundColor:'#D81B60',
+    borderTopColor:'#BDBDBD',
+    borderTopWidth:1,
     flexDirection:'row',
     margin:3,
   },
-  barItem:{
+  barItemLeft:{
     flex:1,
     padding:18,
     alignItem:'center',
+    backgroundColor:'#F5F5F5',
+  },
+  barItemRight:{
+    flex:1,
+    padding:18,
+    alignItem:'center',
+    backgroundColor:'#F5F5F5',
   },
   barseparator:{
     borderRightWidth:2,
-    borderRightColor:'#ffff',
+    borderRightColor:'#BDBDBD',
   },
-  barTop:{
-    color:'#fff',
+  barValueDescription:{
+    color:'#01579B',
     fontSize:16,
     fontWeight:'300',
     fontFamily: 'Roboto',
-    letterSpacing: 1.2,
+    letterSpacing: 1.4,
   },
-  barBottom:{
+  barValue:{
     color:'#004D40',
     fontSize:18,
     marginTop:10,
@@ -187,16 +205,16 @@ const styles = StyleSheet.create({
   },
   statusSection:{
     flexWrap:'wrap',
-    borderTopColor:'#fff',
-    borderTopWidth:4,
-    backgroundColor:'#D81B60',
+    borderTopColor:'#BDBDBD',
+    borderTopWidth:1,
+    backgroundColor:'#F5F5F5',
     flexDirection:'column',
     margin:3,
     padding:30,
   },
   statusDescription:{
     fontSize:16,
-    color:'#ffff',
+    color:'#4d4d4d',
     fontFamily: 'Roboto',
     letterSpacing: 1.2,
     alignContent:'flex-start',
@@ -206,7 +224,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     fontSize:14,
-    color:'#ffff',
+    color:'#4d4d4d',
     fontFamily: 'Roboto',
     letterSpacing: 1.2,
     padding:8,
@@ -216,9 +234,9 @@ const styles = StyleSheet.create({
   },
   revenueSection:{
     flexWrap:'wrap',
-    borderTopColor:'#fff',
-    borderTopWidth:4,
-    backgroundColor:'#D81B60',
+    borderTopColor:'#BDBDBD',
+    borderTopWidth:1,
+    backgroundColor:'#F5F5F5',
     flexDirection:'row',
     margin:3,
     padding:10,
@@ -229,9 +247,9 @@ const styles = StyleSheet.create({
     alignItem:'center',
   },
   revenueSeparator:{
-    borderRightWidth:2,
+    borderRightWidth:1,
     borderRightHeight:'auto',
-    borderRightColor:'#ffff',
+    borderRightColor:'#BDBDBD',
   },
   itemsWrapper:{
      flexGrow : 1,
