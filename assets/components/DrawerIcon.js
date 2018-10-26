@@ -15,7 +15,7 @@ const DrawerIcon = ({navigation}) => (
 		<TouchableOpacity
 			onPress ={()=>navigation.navigate('HomePage')}
 		>
-			<Ionicons name = 'ios-arrow-back' size = {26} color = 'red' style={styles.icon} />
+			<Ionicons name = 'ios-arrow-back' size = {26} color = '#000000' style={styles.icon} />
 		</TouchableOpacity>
 	</View>
 );

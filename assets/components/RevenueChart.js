@@ -5,6 +5,7 @@ import {
 			StyleSheet,
 }from 'react-native';
 
+import PureChart from 'react-native-pure-chart';
 import UnderConstruction from '../components/BackGroundUnderConstruction';
 
 export default class RevenueChart extends React.Component{
@@ -19,9 +20,39 @@ export default class RevenueChart extends React.Component{
 // };
 
 render(){
+
+	const chart_wh = 250
+    const series = [123, 321, 123, 789, 537]
+    const sliceColor = ['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']
+    let sampleData = [
+    {
+      value: 50,
+      label: 'Marketing'
+     
+    }, {
+      value: 40,
+      label: 'Sales'
+     
+    }, {
+      value: 25,
+      label: 'Support'
+     
+    }, {
+      value: 25,
+      label: 'Support'
+     
+    }, {
+      value: 25,
+      label: 'Support'
+     
+    }
+
+  ]
+
 		return(
 			<View style = {styles.container}>
-				<UnderConstruction/>
+				<Text style={styles.title}>Total Revenue</Text>
+          		<PureChart data={sampleData} radius={100} type='pie' />
 			</View>
 		);	
 	}
@@ -31,5 +62,14 @@ const styles = StyleSheet.create({
 	container:{
 		flex : 1,
 		backgroundColor:'#ffff',
-	}
+		 alignItems: 'center',
+	},
+  title: {
+    margin: 10,
+    fontSize: 24,
+    fontWeigth:'300',
+    fontFamily: 'Roboto',
+	letterSpacing: 0.8,
+  },
+  
 });

@@ -234,7 +234,7 @@ export const ChartScreen = createStackNavigator({
 	DChart :{
 		screen : RevenueChart,
 		navigationOptions: ( { navigation } )=> ({
-			title : 'Total Revenue Chart',
+			title : 'Revenue Chart',
 
 			headerStyle: { backgroundColor: '#2196f3'},
 			headerTintColor: '#fff',
