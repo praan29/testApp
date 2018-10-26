@@ -235,10 +235,13 @@ export const ChartScreen = createStackNavigator({
 		screen : RevenueChart,
 		navigationOptions: ( { navigation } )=> ({
 			title : 'Revenue Chart',
-
-			headerStyle: { backgroundColor: '#2196f3'},
+			headerStyle: { backgroundColor: '#0D47A1',height : 80,}, // Tab Header
 			headerTintColor: '#fff',
-	 		headerLeft : <DrawerIcon navigation = { navigation }/>,
+			headerTitleStyle:{
+				fontSize:20,fontFamily:'Roboto',color:'#fff',fontWeigth:'100',letterSpacing:1.8,
+			},
+			// headerLeft: <HeaderBackButton onPress={() => this.navigation.goBack(null)} />,
+	 		headerLeft : <DrawerIcon navigation = { navigation } />,
  		}),
 	}
 });

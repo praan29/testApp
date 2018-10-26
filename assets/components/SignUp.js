@@ -259,7 +259,7 @@ genderButtons:{
 },
 createButton:{
 	zIndex : 11,
-	right : 7,
+	right : 4,
 	bottom : 149,
 	width : 70,
 	height : 70,
@@ -272,7 +272,7 @@ createButton:{
 },
 cancelButton:{
 	zIndex : 11,
-	right : 7,
+	right : 4,
 	bottom : 72,
 	width : 70,
 	height : 70,

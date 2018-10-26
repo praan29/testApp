@@ -48,28 +48,33 @@ render(){
     }
 
   ]
-
 		return(
 			<View style = {styles.container}>
 				<Text style={styles.title}>Total Revenue</Text>
-          		<PureChart data={sampleData} radius={100} type='pie' />
+				<View style={styles.chartSection}>
+          			<PureChart data={sampleData} radius={100} type='pie' />
+          		</View>
 			</View>
 		);	
 	}
 }
 
 const styles = StyleSheet.create({
-	container:{
-		flex : 1,
-		backgroundColor:'#ffff',
-		 alignItems: 'center',
-	},
+  container:{
+	flex : 1,
+	backgroundColor:'#ffff',
+  },
   title: {
+  	justifyContent:'flex-start',
     margin: 10,
     fontSize: 24,
     fontWeigth:'300',
     fontFamily: 'Roboto',
 	letterSpacing: 0.8,
+  },
+  chartSection:{
+  	marginLeft : 20,
+  	marginVertical:20,
   },
   
 });
